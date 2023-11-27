@@ -15,6 +15,7 @@
 		32C086C02B13A223003F58B0 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C086BF2B13A223003F58B0 /* Bundle-Decodable.swift */; };
 		32C086C22B13A32B003F58B0 /* Clues.json in Resources */ = {isa = PBXBuildFile; fileRef = 32C086C12B13A32B003F58B0 /* Clues.json */; };
 		32C086C42B151A55003F58B0 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C086C32B151A55003F58B0 /* FileManager-DocumentsDirectory.swift */; };
+		32C086C72B151F44003F58B0 /* ClueListEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C086C62B151F44003F58B0 /* ClueListEntryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		32C086BF2B13A223003F58B0 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		32C086C12B13A32B003F58B0 /* Clues.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Clues.json; sourceTree = "<group>"; };
 		32C086C32B151A55003F58B0 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
+		32C086C62B151F44003F58B0 /* ClueListEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueListEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		32C086C52B151ED1003F58B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				32C086C62B151F44003F58B0 /* ClueListEntryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			files = (
 				3292F01A2B139F2700C0A40E /* ContentView.swift in Sources */,
 				32C086C42B151A55003F58B0 /* FileManager-DocumentsDirectory.swift in Sources */,
+				32C086C72B151F44003F58B0 /* ClueListEntryView.swift in Sources */,
 				32C086BE2B13A0BC003F58B0 /* Clue.swift in Sources */,
 				3292F0182B139F2700C0A40E /* TreasureHuntApp.swift in Sources */,
 				32C086C02B13A223003F58B0 /* Bundle-Decodable.swift in Sources */,

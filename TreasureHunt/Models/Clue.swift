@@ -23,7 +23,7 @@ class ClueStore: ObservableObject {
 	
 	init() {
 		clues = Bundle.main.decode("Clues.json")
-		var loadedIds =  FileManager.default.loadIds(from: path)
+		let loadedIds =  FileManager.default.loadIds(from: path)
 		if !loadedIds.isEmpty {
 			_foundClues = Published(wrappedValue: loadedIds)
 		} else {
@@ -31,16 +31,16 @@ class ClueStore: ObservableObject {
 		}
 	}
 	
-	func checkID(_ id: UUID) -> ClueScanResult {
-		if clues.contains(where: {id == $0.id}) {
+	func checkID(_ id: UUID) -> Result<Clue, ClueCheckError> {
+		if let clue = clues.first(where: {id == $0.id}) {
 			if foundClues.contains(where: {$0 == id}){
-				return .alreadyFound
+				return .failure(.alreadyFound)
 			}
 			foundClues.append(id)
 			save()
-			return .valid
+			return .success(clue)
 		}
-		return .invalid
+		return .failure(.invalid)
 	}
 	
 	func load() {
@@ -60,8 +60,10 @@ struct Clue: Identifiable, Codable, Hashable {
 	var bodyFormatted: LocalizedStringKey {
 		LocalizedStringKey(body)
 	}
+	
+	static let example = Clue(id: UUID(uuidString: "f33cbbb1-5403-4cd4-881f-f0f83a5d0f88")!, title: "Clue #0", body: "You need a code for this device  \n*Six digits long, to be precise*  \nThis rhyme contains the clues you need,  \nwithin the next six lines you'll read:\n\nOne-eighth a stack of dirt or stone  \nOne more than being all alone  \nHow many tears that temples hide  \nHow many beasts that Champions ride  \nThe number key with 'ABC'  \nAnd finally, the square of three\n\nWith code in hand the games begin,  \nA prize awaits if you can win")
 }
 
-enum ClueScanResult {
-	case invalid, alreadyFound, valid
+enum ClueCheckError: Error {
+	case invalid, alreadyFound
 }

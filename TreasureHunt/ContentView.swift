@@ -18,8 +18,15 @@ struct ContentView: View {
 		NavigationStack(path: $presentedClues) {
 			VStack {
 				ForEach (clueStore.availableClues) { clue in
-					Text(clue.title)
+					NavigationLink(value: clue) {
+						ClueListEntryView(clue: clue)
+					}
 				}
+				Text("Tap the button in the top right corner to scan QR codes.")
+					.foregroundColor(.secondary)
+					.frame(maxWidth: 250)
+					.padding(.top)
+				Spacer()
 			}
 			.navigationDestination(for: Clue.self) { clue in
 				Text(clue.bodyFormatted)
@@ -42,16 +49,21 @@ struct ContentView: View {
     }
 	
 	func scan() {
+		// Scan a QR code and check if it's a UUID
 		let id = UUID(uuidString: "1c494a90-f5e0-4daf-ae97-abc29b7f5879")!
+		
+		// Check that the UUID is a valid clue ID
 		let scanResult = clueStore.checkID(id)
 		switch (scanResult) {
-		case .invalid:
-			alert("Invalid ID", message: "The QR code you scanned doesn't match any known clues.")
-		case .alreadyFound:
-			alert("Already Found", message: "You have already found this clue.")
-		case .valid:
-			// Go to the newly scanned clue
-			alert("Valid Clue", message: "")
+		case .failure(let error):
+			switch error {
+			case .invalid:
+				alert("Invalid Clue", message: "The QR code you scanned doesn't match any known clues.")
+			case .alreadyFound:
+				alert("Already Found", message: "You have already found this clue.")
+			}
+		case .success(let clue):
+			presentedClues.append(clue)
 		}
 	}
 	
