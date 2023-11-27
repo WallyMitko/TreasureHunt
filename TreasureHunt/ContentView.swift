@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CodeScanner
 
 struct ContentView: View {
 	@StateObject var clueStore = ClueStore()
@@ -13,10 +14,12 @@ struct ContentView: View {
 	@State private var alertTitle = ""
 	@State private var alertMessage = ""
 	@State private var presentedClues = [Clue]()
+	@State private var showScanner = false
+	@State private var showAlertOnDismiss = false
 	
-    var body: some View {
+	var body: some View {
 		NavigationStack(path: $presentedClues) {
-			VStack {
+			ScrollView {
 				ForEach (clueStore.availableClues) { clue in
 					NavigationLink(value: clue) {
 						ClueListEntryView(clue: clue)
@@ -35,45 +38,62 @@ struct ContentView: View {
 			.padding()
 			.toolbar {
 				Button {
-					scan()
+					showScanner = true
 				} label: {
 					Image(systemName: "qrcode.viewfinder")
 				}
 			}
 			.alert(alertTitle, isPresented: $showAlert) {
-				Button("OK", role: .cancel) {}
+				Button("OK", role: .cancel) { showAlertOnDismiss = false }
 			} message: {
 				Text(alertMessage)
 			}
-        }
-    }
-	
-	func scan() {
-		// Scan a QR code and check if it's a UUID
-		let id = UUID(uuidString: "1c494a90-f5e0-4daf-ae97-abc29b7f5879")!
-		
-		// Check that the UUID is a valid clue ID
-		let scanResult = clueStore.checkID(id)
-		switch (scanResult) {
-		case .failure(let error):
-			switch error {
-			case .invalid:
-				alert("Invalid Clue", message: "The QR code you scanned doesn't match any known clues.")
-			case .alreadyFound:
-				alert("Already Found", message: "You have already found this clue.")
+			.sheet(isPresented: $showScanner, onDismiss: sheetDismissed) {
+				CodeScannerView(codeTypes: [.qr], completion: scan)
 			}
-		case .success(let clue):
-			presentedClues.append(clue)
 		}
+	}
+	
+	func scan(result: Result<ScanResult, ScanError>) {
+		showScanner = false
+		switch result {
+		case .failure(let error):
+			alert("Scan Error", message: error.localizedDescription)
+		case .success(let data):
+			if let scannedId = UUID(uuidString: data.string) {
+				let scanResult = clueStore.checkID(scannedId)
+				switch (scanResult) {
+				case .failure(let error):
+					switch error {
+					case .invalid:
+						alert("Invalid Clue", message: "The QR code you scanned doesn't match any known clues.")
+					case .alreadyFound:
+						alert("Already Found", message: "You have already found this clue.")
+					}
+				case .success(let clue):
+					presentedClues.append(clue)
+				}
+			}
+			else {
+				alert("Invalid Code", message: "The code you scanned is not a clue ID.")
+			}
+		}
+		
 	}
 	
 	func alert(_ title: String, message: String) {
 		alertTitle = title
 		alertMessage = message
-		showAlert = true
+		showAlertOnDismiss = true
+	}
+	
+	func sheetDismissed() {
+		if showAlertOnDismiss {
+			showAlert = true
+		}
 	}
 }
 
 #Preview {
-    ContentView()
+	ContentView()
 }

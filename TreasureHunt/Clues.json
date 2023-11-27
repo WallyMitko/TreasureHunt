@@ -1,17 +1,62 @@
 [
 		{
 			"id": "f33cbbb1-5403-4cd4-881f-f0f83a5d0f88",
-			"title": "Clue #0",
+			"title": "0. The Hunt Begins",
 			"body": "You need a code for this device  \n*Six digits long, to be precise*  \nThis rhyme contains the clues you need,  \nwithin the next six lines you'll read:\n\nOne-eighth a stack of dirt or stone  \nOne more than being all alone  \nHow many tears that temples hide  \nHow many beasts that Champions ride  \nThe number key with 'ABC'  \nAnd finally, the square of three\n\nWith code in hand the games begin,  \nA prize awaits if you can win"
 		},
 		{
 			"id": "5a13dc60-4535-41fc-9c36-0b61f8b29325",
-			"title": "Clue #1",
+			"title": "1. Phone Unlocked",
 			"body": "From here this phone will be your guide  \nTo find the codes spread far and wide  \nThe first is hidden in plain sight  \nIf you look up and see the light"
 		},
 		{
 			"id": "1c494a90-f5e0-4daf-ae97-abc29b7f5879",
-			"title": "Clue #2",
-			"body": "Of last night's dinner, some remains  \nFor next day's lunch it will be saved  \n**And how will it be warmed again?**  \nOf course, it will be __________"
+			"title": "2. See the Light",
+			"body": "Of last night's dinner, some remains  \nFor next day's lunch it will be saved  \n*And how will it be warmed again?*  \nOf course, it will be __________"
+		},
+		{
+			"id": "1ed95a98-32ed-4071-b9aa-4d6e78a22a3b",
+			"title": "3. Nuked",
+			"body": "A useful product made from wood  \nFor cleaning liquid spills it's good  \nA cardboard tube, white sheets surround  \n*Not far from TP is it found*"
+		},
+		{
+			"id": "ee79c217-7ff5-4a0a-aae1-67c67cc33cf7",
+			"title": "4. On a Roll",
+			"body": "$Cipher"
+		},
+		{
+			"id": "e5f7857f-7415-43ad-ad25-2e051e8283f1",
+			"title": "5. On Ice",
+			"body": "Once or twice a century  \nWhen planets are aligned just right  \n*Two old farts might actually*  \nFeel like a family board game night"
+		},
+		{
+			"id": "4a60d8d6-778c-476b-8af5-7be7853fe481",
+			"title": "6. Rarely Played",
+			"body": "$Formula"
+		},
+		{
+			"id": "6b922ba1-2e0c-4390-92d6-1a1a030f3262",
+			"title": "7. Sweet Spot",
+			"body": "**-4783 -3510 0028**\n\nFind this location and make an anagram of its name.  \n*Charged your switch recently? I sure hope so!*\n\nFind the thing that our _ _ _   _ _ _ _ _ _ _   _ _"
+		},
+		{
+			"id": "85a08ed8-2b2d-4f91-87be-179ca7f637e2",
+			"title": "8. Beware of Dog",
+			"body": "Kosher, rock, or iodized  \nDissolves in water easily  \nCubic crystals, any size  \n*Extracted from the ground or sea*"
+		},
+		{
+			"id": "40b43d85-dd2e-46df-9ded-847b7a08e889",
+			"title": "9. NaCl",
+			"body": "**Quiz time!**  \nThe letters from the correct answers will spell out the location of the next clue.\n\nWhich symbol appears on the 7 key on a standard North American keyboard?  \nD: @  \nS: ^  \nW: &  \nM: $\n\nWhat is the latest major iOS version as of December 2023?  \nL: 15  \nE: 16  \nA: 17  \nR: 18\n\nWhich of these characters is not a sage?  \nT: Sidon  \nN: Riju  \n*V: Yunobo*  \nS: Teba\n\nHow many race tracks are in Mario Kart 8 Deluxe, including all DLC?  \nP: 32  \nE: 48  \nT: 64  \nH: 96\n\nWhat is the current date in ISO 8601 notation?  \nE: 2023-12-25  \nI: 12-25-2023  \nO: 25-12-2023  \nU: 2023-25-12\n\nWhere does Papa do his Christmas shopping?  \nD: RBC  \nS: Scotiabank  \nR: BMO  \nY: TD"
+		},
+		{
+			"id": "ea86a985-39f5-488f-ac64-00502a95054a",
+			"title": "10: Washed Up",
+			"body": "You've searched this place from wall to wall  \nFound clues in places big and small  \n*Except, your hunt's about to stall*  \nThe final clue's not here at all\n\nWho never buys from Amazon  \nUnplugs his stuff if he'll be gone  \nWhile driving, won't turn music on  \nAnd wakes before the crack of dawn?"
+		},
+		{
+			"id": "0e4c5a5a-43f5-4dd8-9d22-e12627e03667",
+			"title": "11: This is It",
+			"body": "A shorter game this time around  \nThe final clue's what you just found  \nJust one last puzzle left to do  \nBefore the prize is revealed to you  \nFrom every clue, a single line  \n*Stands out from others by design*  \nThe letters at the start of each  \nWill show you how the clue is reached\n\n_ _ _ _ _ _   _   _ _ _ _"
 		}
 ]
