@@ -11,6 +11,10 @@
 		3292F01A2B139F2700C0A40E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292F0192B139F2700C0A40E /* ContentView.swift */; };
 		3292F01C2B139F2A00C0A40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3292F01B2B139F2A00C0A40E /* Assets.xcassets */; };
 		3292F01F2B139F2A00C0A40E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3292F01E2B139F2A00C0A40E /* Preview Assets.xcassets */; };
+		32C086BE2B13A0BC003F58B0 /* Clue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C086BD2B13A0BC003F58B0 /* Clue.swift */; };
+		32C086C02B13A223003F58B0 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C086BF2B13A223003F58B0 /* Bundle-Decodable.swift */; };
+		32C086C22B13A32B003F58B0 /* Clues.json in Resources */ = {isa = PBXBuildFile; fileRef = 32C086C12B13A32B003F58B0 /* Clues.json */; };
+		32C086C42B151A55003F58B0 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C086C32B151A55003F58B0 /* FileManager-DocumentsDirectory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		3292F0192B139F2700C0A40E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3292F01B2B139F2A00C0A40E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3292F01E2B139F2A00C0A40E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		32C086BD2B13A0BC003F58B0 /* Clue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clue.swift; sourceTree = "<group>"; };
+		32C086BF2B13A223003F58B0 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		32C086C12B13A32B003F58B0 /* Clues.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Clues.json; sourceTree = "<group>"; };
+		32C086C32B151A55003F58B0 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +59,15 @@
 		3292F0162B139F2700C0A40E /* TreasureHunt */ = {
 			isa = PBXGroup;
 			children = (
+				32C086BC2B13A0AD003F58B0 /* Models */,
 				3292F0172B139F2700C0A40E /* TreasureHuntApp.swift */,
 				3292F0192B139F2700C0A40E /* ContentView.swift */,
+				32C086C52B151ED1003F58B0 /* Views */,
 				3292F01B2B139F2A00C0A40E /* Assets.xcassets */,
 				3292F01D2B139F2A00C0A40E /* Preview Content */,
+				32C086BF2B13A223003F58B0 /* Bundle-Decodable.swift */,
+				32C086C32B151A55003F58B0 /* FileManager-DocumentsDirectory.swift */,
+				32C086C12B13A32B003F58B0 /* Clues.json */,
 			);
 			path = TreasureHunt;
 			sourceTree = "<group>";
@@ -65,6 +78,21 @@
 				3292F01E2B139F2A00C0A40E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		32C086BC2B13A0AD003F58B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32C086BD2B13A0BC003F58B0 /* Clue.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32C086C52B151ED1003F58B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +155,7 @@
 			files = (
 				3292F01F2B139F2A00C0A40E /* Preview Assets.xcassets in Resources */,
 				3292F01C2B139F2A00C0A40E /* Assets.xcassets in Resources */,
+				32C086C22B13A32B003F58B0 /* Clues.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +167,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3292F01A2B139F2700C0A40E /* ContentView.swift in Sources */,
+				32C086C42B151A55003F58B0 /* FileManager-DocumentsDirectory.swift in Sources */,
+				32C086BE2B13A0BC003F58B0 /* Clue.swift in Sources */,
 				3292F0182B139F2700C0A40E /* TreasureHuntApp.swift in Sources */,
+				32C086C02B13A223003F58B0 /* Bundle-Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
