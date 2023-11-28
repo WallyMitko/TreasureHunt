@@ -11,6 +11,7 @@ import CodeScanner
 struct ContentView: View {
 	@StateObject var clueStore = ClueStore()
 	@State private var showAlert = false
+	@State private var showDeletionAlert = false
 	@State private var alertTitle = ""
 	@State private var alertMessage = ""
 	@State private var presentedClues = [Clue]()
@@ -29,6 +30,12 @@ struct ContentView: View {
 					.foregroundColor(.secondary)
 					.frame(maxWidth: 250)
 					.padding(.top)
+				Button("Reset clues", role: .destructive) {
+					alertTitle = "Are you sure?"
+					alertMessage = "This will completely reset your progress and cannot be undone."
+					showDeletionAlert = true
+				}
+				.buttonStyle(.bordered)
 				Spacer()
 			}
 			.navigationDestination(for: Clue.self) { clue in
@@ -37,14 +44,24 @@ struct ContentView: View {
 			.navigationTitle("Clues")
 			.padding()
 			.toolbar {
-				Button {
-					showScanner = true
-				} label: {
-					Image(systemName: "qrcode.viewfinder")
+				ToolbarItem(placement: .topBarTrailing){
+					Button {
+						showScanner = true
+					} label: {
+						Image(systemName: "qrcode.viewfinder")
+					}
 				}
 			}
 			.alert(alertTitle, isPresented: $showAlert) {
 				Button("OK", role: .cancel) { showAlertOnDismiss = false }
+			} message: {
+				Text(alertMessage)
+			}
+			.alert(alertTitle, isPresented: $showDeletionAlert) {
+				Button("Cancel", role: .cancel) { }
+				Button("Reset", role: .destructive) {
+					clueStore.clear()
+				}
 			} message: {
 				Text(alertMessage)
 			}

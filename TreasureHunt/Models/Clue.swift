@@ -43,6 +43,11 @@ class ClueStore: ObservableObject {
 		return .failure(.invalid)
 	}
 	
+	func clear() {
+		foundClues = initialClues
+		save()
+	}
+	
 	func load() {
 		foundClues = FileManager.default.loadIds(from: path)
 	}
