@@ -39,7 +39,7 @@ struct ContentView: View {
 				Spacer()
 			}
 			.navigationDestination(for: Clue.self) { clue in
-				Text(clue.bodyFormatted)
+				ClueDetailView(clue: clue)
 			}
 			.navigationTitle("Clues")
 			.padding()
