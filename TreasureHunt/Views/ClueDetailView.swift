@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ClueDetailView: View {
 	let clue: Clue
+	@State private var showHint = false
 	@Environment(\.colorScheme) var colorScheme
     var body: some View {
 		ScrollView {
@@ -27,6 +28,18 @@ struct ClueDetailView: View {
 			}
 			else {
 				Text(clue.bodyFormatted)
+			}
+			
+			if let hint = clue.hintFormatted {
+				Button(showHint ? "Hide Hint" : "Show Hint") {
+					showHint.toggle()
+				}
+				.buttonStyle(.bordered)
+				.padding(.vertical)
+				
+				if (showHint) {
+					Text(hint)
+				}
 			}
 			Spacer()
 		}
